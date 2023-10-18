@@ -12,27 +12,33 @@
             int.TryParse(text_edad.Text, out int edad);
             string? selectedValue = combo_ocupacion.SelectedItem as string;
 
+            string message;
+            string caption;
+
             if (text_nombres.Text.Length > 0 && text_identificacion.Text.Length > 0 && text_edad.Text.Length > 0 && combo_ocupacion.Text.Length > 0)
             {
                 if (edad < 16)
                 {
-                    /// mensaje de que no puede ingresar es mejor que 16. 
+                    message = "No pude Ingresar es Mejor de 16 Años";
+                    caption = "Ingreso no Autorizado";
                 }
                 else if (edad > 16 && edad < 21 && selectedValue == "Estudiante")
                 {
-                    // Mensaje de Ingresan Gratis.
+                    message = "Ingreso Autorizado, El estudiantes " + text_nombres.Text + " Ingresa Gratis";
+                    caption = "Ingreso Gratis";
                 }
                 else 
-                { 
-                    // Mensaje que debe pagar una entrada.
+                {
+                    message = "Ingreso Autorizado, El Usuario " + text_nombres.Text + "debe de pagar la Entrada de Valor: $30.000";
+                    caption = "Ingreso De Pago";
                 }
             }
             else
             {
-                const string message = "Por favor, complete todos los campos antes de continuar.";
-                const string caption = "Campos Incompletos";
-                MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                message = "Por favor, complete todos los campos antes de continuar.";
+                caption = "Campos Incompletos";
             }
+            MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
 

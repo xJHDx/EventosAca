@@ -34,7 +34,8 @@
             button3 = new Button();
             text_numero = new TextBox();
             label2 = new Label();
-            label_respuesta = new Label();
+            textBoxResultado = new Label();
+            text_titulo = new Label();
             SuspendLayout();
             // 
             // button1
@@ -94,20 +95,31 @@
             label2.TabIndex = 5;
             label2.Text = "Numero";
             // 
-            // label_respuesta
+            // textBoxResultado
             // 
-            label_respuesta.AutoSize = true;
-            label_respuesta.Location = new Point(78, 140);
-            label_respuesta.Name = "label_respuesta";
-            label_respuesta.Size = new Size(0, 15);
-            label_respuesta.TabIndex = 6;
+            textBoxResultado.AutoSize = true;
+            textBoxResultado.Location = new Point(27, 149);
+            textBoxResultado.Name = "textBoxResultado";
+            textBoxResultado.Size = new Size(12, 15);
+            textBoxResultado.TabIndex = 6;
+            textBoxResultado.Text = "-";
+            // 
+            // text_titulo
+            // 
+            text_titulo.AutoSize = true;
+            text_titulo.Location = new Point(139, 131);
+            text_titulo.Name = "text_titulo";
+            text_titulo.Size = new Size(12, 15);
+            text_titulo.TabIndex = 7;
+            text_titulo.Text = "-";
             // 
             // Fibonacci
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(323, 320);
-            Controls.Add(label_respuesta);
+            ClientSize = new Size(336, 205);
+            Controls.Add(text_titulo);
+            Controls.Add(textBoxResultado);
             Controls.Add(label2);
             Controls.Add(text_numero);
             Controls.Add(button3);
@@ -137,6 +149,7 @@
         private Button button3;
         private TextBox text_numero;
         private Label label2;
-        private Label label_respuesta;
+        private Label textBoxResultado;
+        private Label text_titulo;
     }
 }

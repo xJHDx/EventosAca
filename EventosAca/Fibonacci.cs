@@ -22,7 +22,7 @@ namespace EventosAca
             int.TryParse(text_numero.Text, out int _num);
             if (_num <= 0)
             {
-               // textBoxResultado.Text = "Por favor, ingrese un número positivo.";
+                textBoxResultado.Text = "Por favor, ingrese un número positivo.";
             }
             else
             {
@@ -36,7 +36,8 @@ namespace EventosAca
                     first = second;
                     second = next;
                 }
-               // textBoxResultado.Text = "Los primeros " + n + " números de la serie de Fibonacci son:\r\n" + fibonacciSequence.ToString();
+                text_titulo.Text = "For";
+                textBoxResultado.Text = "Los primeros " + _num + " números de la serie de Fibonacci son:\r\n" + fibonacciSequence.ToString();
             }
         }
 
@@ -45,9 +46,9 @@ namespace EventosAca
             int.TryParse(text_numero.Text, out int _num);
             if (_num <= 0)
             {
-                // textBoxResultado.Text = "Por favor, ingrese un número positivo.";
+                textBoxResultado.Text = "Por favor, ingrese un número positivo.";
             }
-            else 
+            else
             {
                 int first = 0;
                 int second = 1;
@@ -62,8 +63,8 @@ namespace EventosAca
                     second = next;
                     i++;
                 }
-
-               // textBoxResultado.Text = "Los primeros " + n + " números de la serie de Fibonacci son:\r\n" + fibonacciSequence.ToString();
+                text_titulo.Text = "While";
+                textBoxResultado.Text = "Los primeros " + _num + " números de la serie de Fibonacci son:\r\n" + fibonacciSequence.ToString();
             }
 
         }
