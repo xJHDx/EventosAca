@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace EventosAca
+﻿namespace EventosAca
 {
     public partial class Ingreso_Evento : Form
     {
@@ -19,9 +9,23 @@ namespace EventosAca
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int.TryParse(text_edad.Text, out int edad);
+            string? selectedValue = combo_ocupacion.SelectedItem as string;
+
             if (text_nombres.Text.Length > 0 && text_identificacion.Text.Length > 0 && text_edad.Text.Length > 0 && combo_ocupacion.Text.Length > 0)
             {
-
+                if (edad < 16)
+                {
+                    /// mensaje de que no puede ingresar es mejor que 16. 
+                }
+                else if (edad > 16 && edad < 21 && selectedValue == "Estudiante")
+                {
+                    // Mensaje de Ingresan Gratis.
+                }
+                else 
+                { 
+                    // Mensaje que debe pagar una entrada.
+                }
             }
             else
             {
@@ -39,5 +43,9 @@ namespace EventosAca
             menu.Show();
         }
 
+        private void Ingreso_Evento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

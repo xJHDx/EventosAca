@@ -119,6 +119,7 @@
             text_identificacion.Name = "text_identificacion";
             text_identificacion.Size = new Size(167, 23);
             text_identificacion.TabIndex = 9;
+            text_identificacion.KeyPress += text_number_KeyPress;
             // 
             // text_edad
             // 
@@ -126,7 +127,7 @@
             text_edad.Name = "text_edad";
             text_edad.Size = new Size(167, 23);
             text_edad.TabIndex = 10;
-            text_edad.KeyPress += text_edad_KeyPress;
+            text_edad.KeyPress += text_number_KeyPress;
             // 
             // btn_menu
             // 
@@ -156,11 +157,12 @@
             Controls.Add(label1);
             Name = "Ingreso_Evento";
             Text = "Ingreso Eventos Publicos";
+            Load += Ingreso_Evento_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
-        private void text_edad_KeyPress(object sender, KeyPressEventArgs e)
+        private void text_number_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permite solo dígitos (números) y la tecla Backspace (para borrar).
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -183,5 +185,6 @@
         private TextBox text_identificacion;
         private TextBox text_edad;
         private Button btn_menu;
+        private Label label6;
     }
 }

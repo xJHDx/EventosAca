@@ -56,7 +56,6 @@
             label1.Size = new Size(256, 21);
             label1.TabIndex = 1;
             label1.Text = "Calculadora de la serie de Fibonacci";
-
             // 
             // button2
             // 
@@ -134,7 +133,6 @@
 
         private Button button1;
         private Label label1;
-        private Splitter splitter1;
         private Button button2;
         private Button button3;
         private TextBox text_numero;

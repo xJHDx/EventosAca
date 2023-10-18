@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text;
+
 
 namespace EventosAca
 {
@@ -26,13 +19,52 @@ namespace EventosAca
 
         private void para_Click(object sender, EventArgs e)
         {
-
+            int.TryParse(text_numero.Text, out int _num);
+            if (_num <= 0)
+            {
+               // textBoxResultado.Text = "Por favor, ingrese un número positivo.";
+            }
+            else
+            {
+                int first = 0;
+                int second = 1;
+                StringBuilder fibonacciSequence = new StringBuilder();
+                for (int i = 0; i < _num; i++)
+                {
+                    fibonacciSequence.Append(first + " ");
+                    int next = first + second;
+                    first = second;
+                    second = next;
+                }
+               // textBoxResultado.Text = "Los primeros " + n + " números de la serie de Fibonacci son:\r\n" + fibonacciSequence.ToString();
+            }
         }
 
         private void mientras_Click(object sender, EventArgs e)
         {
-            String _num = text_numero.Text;
-            label_respuesta.Text = _num;
+            int.TryParse(text_numero.Text, out int _num);
+            if (_num <= 0)
+            {
+                // textBoxResultado.Text = "Por favor, ingrese un número positivo.";
+            }
+            else 
+            {
+                int first = 0;
+                int second = 1;
+                StringBuilder fibonacciSequence = new StringBuilder();
+
+                int i = 0;
+                while (i < _num)
+                {
+                    fibonacciSequence.Append(first + " ");
+                    int next = first + second;
+                    first = second;
+                    second = next;
+                    i++;
+                }
+
+               // textBoxResultado.Text = "Los primeros " + n + " números de la serie de Fibonacci son:\r\n" + fibonacciSequence.ToString();
+            }
 
         }
 
